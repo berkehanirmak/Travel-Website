@@ -1,0 +1,128 @@
+:root {
+    --primary-color: hsl(199, 100%, 33%);
+    --secondary-color: hsl(187, 85%, 43%);
+    --white-color: hsl(0, 0%, 100%);
+    --text-color: hsl(240, 4%, 36%);
+    --grey-text: rgb(190, 190, 190);
+    --card-bg: rgb(255, 255, 255);
+    --card-hover: rgba(0, 0, 0, 0.1);
+  }
+  
+  .main {
+    width: 100%;
+  
+    .secTitle {
+      .title {
+        position: relative;
+        color: var(--text-color);
+        margin: 2rem 0;
+  
+        &::after {
+          content: "";
+          position: absolute;
+          background: var(--secondary-color);
+          height: 5px;
+          width: 120px;
+          bottom: 5px;
+          z-index: -1;
+        }
+      }
+    }
+  
+    .secContent {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      justify-content: center;
+  
+      .singleDestination {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 4px 8px var(--card-hover);
+        }
+  
+        .imageDiv {
+          height: 300px;
+          overflow: hidden;
+  
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+          }
+        }
+  
+        .cardInfo {
+          padding: 1rem;
+  
+          .destTitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+          }
+  
+          .continent {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-color);
+  
+            .icon {
+              font-size: 18px;
+            }
+  
+            .name {
+              font-size: 1rem;
+            }
+          }
+  
+          .fees {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-top: 1px solid var(--grey-text);
+            border-bottom: 1px solid var(--grey-text);
+            margin: 1rem 0;
+  
+            .price {
+              font-size: 1.25rem;
+              font-weight: 600;
+              color: var(--primary-color);
+            }
+          }
+  
+          .desc {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+          }
+  
+          .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white-color);
+            background-color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+  
+            .icon {
+              font-size: 1.25rem;
+            }
+  
+            &:hover {
+              background-color: var(--secondary-color);
+            }
+          }
+        }
+      }
+    }
+  }
